@@ -1,0 +1,138 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <body>
+  
+      <div class="container">
+          <div class="row">
+              <div class="box">
+              	<%= form_for @cliente, :action => :new, :method => :post, :html => {class:"form-horizontal"} do |f| %>
+          <fieldset>
+            <div id="legend">
+              <legend class="">Cadastre-se!</legend>
+            </div>
+            
+            	<%= flash[:notice] %>
+            
+            <div class="control-group">
+              <%= f.label "Nome", class:"control-label" %>
+              <div class="controls">
+        		<%= f.text_field :nome, class:"form-control input-lg" %>
+        		<p class="help-block">Por favor, insira seu nome completo</p>
+              </div>
+            </div>
+         
+            <div class="control-group">
+              <%= f.label "Email", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :email, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, proveja seu E-mail</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Telefone", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :telefone, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira seu telefone</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Endereço (logradouro)", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :logradouro, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira seu endereço</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Número", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :numero, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira seu número de endereço</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Complemento", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :complemento, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira o complemento de endereço (caso não tenha, deixe em branco)</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Bairro", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :bairro, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira seu bairro</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Cidade", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :cidade, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira sua cidade</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Estado", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :estado, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira seu estado</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "CEP", class:"control-label" %>
+              <div class="controls">
+                <%= f.text_field :cep, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira seu CEP (apenas números)</p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <%= f.label "Senha", class:"control-label" %>
+              <div class="controls">
+                <%= f.password_field :password, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, insira sua senha</p>
+              </div>
+            </div>
+         
+            <div class="control-group">
+              <label class="control-label" for="password_confirm">Confirmação</label>
+              <div class="controls">
+                <%= f.password_field :password_confirmation, class:"form-control input-lg" %>
+                <p class="help-block">Por favor, confirme sua senha</p>
+              </div>
+            </div>
+         
+            <div class="control-group">
+              <!-- Button -->
+              <div class="controls">
+                <%= f.submit "Cadastrar", class:"btn btn-success" %>
+              </div>
+            </div>
+          </fieldset>
+          
+        <% end %>
+        
+          </div>  
+      </div>
+      <!-- /.container -->
+  
+      <footer>
+          <div class="container">
+              <div class="row">
+                      <center><p>Copyright &copy; Bolo do Moranda 2016</p></center>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  
+  </body>
+  
+  </html>

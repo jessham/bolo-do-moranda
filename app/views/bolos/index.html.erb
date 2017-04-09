@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="row">
+    	<div class="box">
+    		
+    		<div class="page-header">
+				<h1>Bolos tradicionais</h1>
+			</div>
+                    
+    		<% if @bolos %>
+	    		<% @bolos.each do |f| %>
+    	<div class="col-sm-4 col-lg-4 col-md-4">
+			<div class="thumbnail">
+				<% if f.nome == "Bolo de maça" %>
+					<%=  image_tag("Bolo_maca.jpg") %>
+				<% elsif f.nome == "Bolo exagero de chocolate" %>
+					<%= image_tag("Bolo_Chocolate.jpg") %>
+				<% elsif f.nome == "Bolo Sensação" %>
+					<%= image_tag("Bolo_Sensacao.jpg") %>
+				<% else %>
+					<%= image_tag("Bolo_prestigio.jpeg") %>
+				<% end %>
+				<div class="caption">
+					<h4 class="pull-right"><%= f.preco %></h4>
+					<h4><a href="l_boloPrestigio.html"><%= f.nome %></a></h4>
+					<p><b>Sabor:</b> <%= f.sabor %></p>
+					<p><%= f.descricao %></p>
+					<p><b>Ingredientes:</b> <%= f.ingredientes %></p>
+					<p class="pull-right"><%= link_to "Detalhes", detalhes_bolo_path(f) %></p>
+					<div class="row"></div>
+				</div>
+			</div>
+		</div>	
+		<% end %>
+    	<% end %>
+    		
+        </div>
+	</div>
+</div>

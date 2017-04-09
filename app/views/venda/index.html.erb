@@ -1,0 +1,59 @@
+<div class="container">
+	<div class="row">
+    	<div class="box">
+    		
+    		
+    		
+    		<div class="page-header">
+                      <h1>Acompanhe seu Pedido</h1>
+                    </div>
+                    
+                    <% if @venda %>
+                    
+                    <table class="table" BORDER="2" ALIGN="center" WIDTH="120%">
+                      <tr style = "background: #4c3a3a;">
+                        <th colspan = "5"></th>
+                      </tr>
+                       <tr>
+                          <th style="text-align:center;"><h3>BOLO(S)</h3></th>
+                          <th style="text-align:center;"><h3>VALOR TOTAL</h3> </th>
+                          <th style="text-align:center;"><h3>PAGAMENTO CONFIRMADO</h3></th>
+                          <th style="text-align:center;"><h3>DESPACHE CONFIRMADO</h3></th>
+                          <th style="text-align:center;"><h3>ENTREGA CONFIRMADA</h3></th>
+                      </tr>
+                      <!-- exemplo -->
+                      <tr>
+                        <td class="indice">
+                        	<% @bolos.each do |b| %>
+                        	<%= b.nome %><br>
+                        	<% end %>
+                        </td>
+                        <td class="indice"><%= @venda.valor_total %></td>
+                        <td class="indice"><% if @venda.pgto_confirmado == true %>Confirmado<% else %>Não confirmado<% end %>
+                        </td>
+                        <td class="indice"><% if @venda.despache_confirmado == true %>Confirmado<% else %>Não confirmado<% end %>
+                        </td>
+                        <td class="indice"><% if @venda.entrega_confirmada == true %>Confirmada<% else %>Não confirmado<% end %>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <%= link_to "Realizar pagamento em boleto" %> | <%= link_to "Realizar pagamento em cartão" %>
+                    
+                    <%= button_to "Cancelar compra", 
+              									{:controller => "venda",
+    											:action => "destroy",
+    											:id => @venda},
+    											{:method => :delete,
+    											data: { confirm: "Tem certeza que deseja cancelar a compra?"},
+    											:class => "btn btn-danger pull-right"} %>
+    											
+		    		<% else %>
+		    			<h4>Nenhum pedido realizado</h4>
+		    		<% end %>
+                    
+              </div>
+    		
+        </div>
+	</div>
+</div>

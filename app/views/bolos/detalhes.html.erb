@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+    	<div class="box">
+    			<div class="page-header">
+                      <h1>Bolos tradicionais</h1>
+                    </div>
+
+                    <div class="thumbnail">
+                    <% if @bolo.nome == "Bolo de maça" %>
+						<%=  image_tag("Bolo_maca.jpg", class:"col-lg-6") %>
+					<% elsif @bolo.nome == "Bolo exagero de chocolate" %>
+						<%= image_tag("Bolo_Chocolate.jpg", class:"col-lg-6") %>
+					<% elsif @bolo.nome == "Bolo Sensação" %>
+						<%= image_tag("Bolo_Sensacao.jpg", class:"col-lg-6") %>
+					<% else %>
+						<%= image_tag("Bolo_prestigio.jpeg", class:"col-lg-6") %>
+					<% end %>
+                    <div class="caption-full">
+                        <h4><%= @bolo.nome %></h4>
+                        <h4><%= @bolo.preco %></h4>
+                        <br><br><br>
+                        <p><b>Sabor:</b> <%= @bolo.sabor %></p>
+						<p><b>Ingredientes:</b> <%= @bolo.ingredientes %></p>
+                        <p><%= @bolo.descricao %></p>
+                         <br><br><br> <br><br><br><br><br><br><br>
+                    </div>
+                    
+                    <% if current_user %>
+                    <%= button_to "Adicionar no carrinho", :controller => "carrinho",
+    												   :action => "create",
+    												   :bolos_id => @bolo,
+    												   :method => :post %>
+    				<% else %>
+    				<P>É necessário logar para poder realizar a compra.</P>
+    				<% end %>
+                </div>
+        </div>
+	</div>
+</div>

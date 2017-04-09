@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+    	<div class="box">
+    		
+    		<%= form_for @bolo do |f| %>
+    		
+    			<%= f.label "Nome" %>
+    			<%= f.text_field :nome %>
+    			
+    			<%= f.label "Sabor" %>
+    			<%= f.text_field :sabor %>
+    			
+    			<%= f.label "Descricao" %>
+    			<%= f.text_field :descricao %>
+    			
+    			<%= f.label "Ingredientes" %>
+    			<%= f.text_field :ingredientes %>
+    			
+    			<%= f.label "Preço" %>
+    			<%= f.text_field :preco %>
+    			
+    			<%= f.submit "Cadastrar bolo" %>
+    		<% end %>
+    		
+        </div>
+	</div>
+</div>

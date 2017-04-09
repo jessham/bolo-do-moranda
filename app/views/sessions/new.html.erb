@@ -1,0 +1,54 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <body>  
+      <div class="container">
+  
+          <div class="row">
+              <div class="box">
+      			<%= form_tag '/login', :html => {class:"form-signin"} do %>
+      			
+      				<h2 class="form-signin-heading">Login</h2>
+      				
+      				<%= flash[:notice] %>
+      			
+	      			<%= text_field_tag :email, nil, :class => "form-control", :placeholder => "Email" %>
+	      			
+	      			<%= password_field_tag :password, nil, :class => "form-control", :placeholder => "Senha" %>
+	      			
+	      			<legend class=""></legend>
+	      			
+	      			<%= submit_tag "Login", :class => "btn btn-lg btn-primary btn-block" %>
+      			<% end %>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="box">
+                  <div class="col-lg-6">
+                      <hr>
+                      <h2 class="text-center"><span style="color:gray">Sobre</span>
+                          <strong>a Empresa</strong>
+                      </h2>
+                      <hr>
+                      <%= image_tag("index/Bolo85.jpg", height:"30%", width:"30%", class:"img-responsive img-border img-left") %>
+                      <hr class="visible-xs">
+                      <p><strong>Bolo do Moranda</strong> &eacute; uma confeitaria localizada na EACH-USP que oferece aos seus clientes Bolos da melhor qualidade e feitos com muito amor e carinho pela dono Marcelo Morandini.</p>
+                  </div>
+              </div>
+          </div>  
+      </div>
+      <!-- /.container -->
+  
+      <footer>
+          <div class="container">
+              <div class="row">
+                      <center><p>Copyright &copy; Bolo do Moranda 2016</p></center>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  
+  </body>
+  
+  </html>
